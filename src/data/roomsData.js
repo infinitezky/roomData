@@ -1,5 +1,5 @@
 export const roomsData = {
-  "R030301": {
+  "030301": {
     name: "Kelas VIII B",
     location: "Lantai 3 - Gedung SMP",
     capacity: "30 siswa",
@@ -196,3 +196,4 @@ export const roomsData = {
   }
 
 };
+
