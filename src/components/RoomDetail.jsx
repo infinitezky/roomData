@@ -4,7 +4,6 @@ import { roomsData } from '../data';
 import { InfoCard, AssetItem, MapModal } from './index';
 import Logo from '../assets/logo.png';
 
-// Komponen Carousel sederhana tanpa library eksternal
 export function GalleryWithCarousel({ images = [] }) {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -29,7 +28,7 @@ export function GalleryWithCarousel({ images = [] }) {
 
   if (images.length === 0) {
     return (
-      <div className="w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem] xl:h-[36rem] bg-gray-100 rounded-xl flex items-center justify-center">
+      <div className="w-full aspect-[16/9] bg-gray-100 rounded-xl flex items-center justify-center">
         <div className="text-center">
           <div className="text-4xl mb-2">📷</div>
           <p className="text-gray-500">Tidak ada gambar tersedia</p>
@@ -39,7 +38,7 @@ export function GalleryWithCarousel({ images = [] }) {
   }
 
   return (
-    <div className="relative w-full h-80 sm:h-96 md:h-[28rem] lg:h-[32rem] rounded-xl overflow-hidden shadow-lg">
+    <div className="relative w-full aspect-[16/9] rounded-xl overflow-hidden shadow-lg bg-gradient-to-br from-blue-50 to-blue-100">
       {/* Images */}
       <div className="relative w-full h-full">
         {images.map((image, index) => (
@@ -52,7 +51,7 @@ export function GalleryWithCarousel({ images = [] }) {
             <img
               src={image.src}
               alt={image.alt || `Slide ${index + 1}`}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-xl"
             />
           </div>
         ))}
@@ -63,13 +62,13 @@ export function GalleryWithCarousel({ images = [] }) {
         <>
           <button
             onClick={prevSlide}
-            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            className="absolute left-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors z-10"
           >
             ❮
           </button>
           <button
             onClick={nextSlide}
-            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+            className="absolute right-2 top-1/2 transform -translate-y-1/2 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors z-10"
           >
             ❯
           </button>
@@ -78,7 +77,7 @@ export function GalleryWithCarousel({ images = [] }) {
 
       {/* Dots Indicator */}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2">
+        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex gap-2 z-10">
           {images.map((_, index) => (
             <button
               key={index}
@@ -298,5 +297,6 @@ const RoomDetail = () => {
     </div>
   );
 };
+
 
 export default RoomDetail;
