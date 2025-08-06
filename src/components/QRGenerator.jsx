@@ -6,7 +6,7 @@ const QRGenerator = () => {
   const [qrCodes, setQrCodes] = useState({});
   const [loading, setLoading] = useState(true);
   
-  const baseUrl = 'https://room-data-one.vercel.app/'; // Ganti dengan domain Anda
+  const baseUrl = 'https://room-data-one.vercel.app'; // Ganti dengan domain Anda
 
   useEffect(() => {
     const generateQRCodes = async () => {
@@ -78,7 +78,7 @@ const QRGenerator = () => {
                 </div>
                 
                 <div className="text-sm text-gray-600 mb-4 break-all">
-                  {baseUrl}/kelas/{roomId}
+                  {baseUrl}/room/{roomId}
                 </div>
                 
                 <button
@@ -105,4 +105,5 @@ const QRGenerator = () => {
 
 
 export default QRGenerator;
+
 
