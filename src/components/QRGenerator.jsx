@@ -13,7 +13,7 @@ const QRGenerator = () => {
       const codes = {};
       
       for (const roomId in roomsData) {
-        const url = `${baseUrl}/kelas/${roomId}`;
+        const url = `${baseUrl}/room/${roomId}`;
         try {
           const qrDataUrl = await QRCode.toDataURL(url, {
             width: 200,
@@ -105,3 +105,4 @@ const QRGenerator = () => {
 
 
 export default QRGenerator;
+
